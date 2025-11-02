@@ -49,7 +49,7 @@ api_router.include_router(messages.router, prefix="/messages", tags=["messages"]
 app.include_router(api_router)
 
 # Serve uploaded files
-uploads_dir = Path("/app/backend/uploads")
+uploads_dir = Path("uploads")
 uploads_dir.mkdir(exist_ok=True)
 app.mount("/api/uploads", StaticFiles(directory=str(uploads_dir)), name="uploads")
 

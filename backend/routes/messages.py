@@ -154,7 +154,7 @@ async def upload_file(
         )
     
     # Create uploads directory if not exists
-    upload_dir = "/app/backend/uploads"
+    upload_dir = "uploads"
     os.makedirs(upload_dir, exist_ok=True)
     
     # Generate unique filename
