@@ -30,6 +30,14 @@ if (config.enableHealthCheck) {
 }
 
 const webpackConfig = {
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
   webpack: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
