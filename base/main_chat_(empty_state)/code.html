@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aeterna Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f5dff",
+                        "background-light": "#f6f6f8",
+                        "amoled-black": "#000000",
+                        "sidebar-dark": "#050505",
+                        "border-dark": "#1f5dff33",
+                        "text-dark-primary": "#e0e0e0",
+                        "text-dark-secondary": "#7a7a7a",
+                        "glow-start": "rgba(31, 93, 255, 0)",
+                        "glow-mid": "#1f5dff",
+                        "glow-end": "rgba(31, 93, 255, 0)"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        }
+                    },
+                    animation: {
+                        gradient: 'gradient 15s ease infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .glow-border {
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--tw-gradient-stops));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .group:hover .glow-border::before, .active-chat .glow-border::before {
+            opacity: 1;
+        }
+        .active-chat {
+            background-color: #1f5dff1a;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(31, 93, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-amoled-black font-display text-text-dark-primary">
+<div class="flex h-screen w-full flex-col">
+<div class="flex h-full w-full">
+<aside class="flex h-full w-full max-w-[360px] flex-col border-r border-border-dark bg-sidebar-dark">
+<div class="flex flex-col h-full">
+<div class="flex flex-col gap-4 p-4 border-b border-border-dark">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Aeterna app logo, a stylized letter A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC58f76yso0iut0Va6mP5DJ0tZf_RjiZ7X_c8nXrnqvyxtw9SdQcic0_8-JoP5SnjvorkWrYIbNntEYvb2BTM2MODc2xER6ZIWmp21_spKzH981qMKLnusOEXn5y0q8L7yPMQQCn8KPytBWYLGvQ7m-f0XHdigAY3lYa4jltrQ6GbfWU36_0xun7CstsyiVewU8-Yw-5k-B-uxIhQZCLPt4Dsrv26_C2ky4H1TX_ArBXcUNNcEQL-4acVXyzabrD0DCuG9fCd--9B-4");'></div>
+<h1 class="text-lg font-bold text-primary text-glow">Aeterna</h1>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 hover:bg-opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-base">add</span>
+<span class="truncate">New Chat</span>
+</button>
+</div>
+<div class="w-full">
+<label class="flex flex-col w-full">
+<div class="relative flex w-full flex-1 items-stretch rounded-lg h-10">
+<div class="glow-border absolute inset-0 rounded-lg from-glow-start via-glow-mid to-glow-end opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></div>
+<div class="group relative flex w-full items-stretch rounded-lg bg-amoled-black">
+<div class="text-text-dark-secondary flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark-primary focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-dark-secondary px-2 text-sm font-normal" placeholder="Search or start a new chat" value=""/>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="flex-grow overflow-y-auto">
+<nav class="flex flex-col p-2">
+<div class="group relative rounded-lg cursor-pointer active-chat">
+<div class="absolute inset-0 rounded-lg glow-border from-glow-start via-glow-mid to-glow-end"></div>
+<div class="relative flex gap-3 px-3 py-2.5 justify-between rounded-lg transition-colors duration-300">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Avatar for Design Team group chat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQdODu9p_42cLW72yA5uVR4_Xt1o97Pn8eEqBEJVGABUDQPNvZ44PfE59i2eIL2VFtiN1mUD5yqDEQOpdceDvxNAWoeZeexELNyNivmaQDLvzUWhhPMrBE4fRt4Li7v_wOaFe6L1jWgD7YlEzFvEk6CCSslmvXNiOsW_PMOG1E_UQeraBtHo8CIxR5aYfn_mq0HxXDD840BT1yWFNxVmYZTEZOlzVnPPzA2fNytA6mikHtcPKKxX52CyfOMy34-z9LM5oy7IYHwuho");'></div>
+<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-sidebar-dark"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-dark-primary text-sm font-medium leading-normal">Design Team</p>
+<p class="text-text-dark-secondary text-sm font-normal leading-normal truncate max-w-[150px]">Sarah: Here's the latest update...</p>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1.5">
+<p class="text-xs font-medium text-primary text-glow">11:15 AM</p>
+<span class="flex items-center justify-center bg-primary text-white text-xs font-bold rounded-full size-5">2</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-lg cursor-pointer">
+<div class="absolute inset-0 rounded-lg glow-border from-glow-start via-glow-mid to-glow-end"></div>
+<div class="relative flex gap-3 px-3 py-2.5 justify-between rounded-lg hover:bg-[#1f5dff1a] transition-colors duration-300">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Avatar for Alex Thompson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArRHt1rE9Wzn_CSebqria6wuabXuNSi7fY0tDlDhdFXl_r5AMOmD2gwcwjwtjysfdcURHxPi7tmAcu_GGeL6gB0fuJCN2EAiJtBVwmC-YtKJqDRo1XcZuSFnwnVMvqZ5-RBwCrQaqsq8dKd0jj6FepgkWb0_D24pZ25BO-AvTETsvOUiC7bpI-FNOGS3ST3Na9VIt61Ht5HQ2RZMI0KQa_Rxy2xNikGYeFcjeULpoQsMZt-aGcrVcg9gAxHnqTkQRsNGGAmgJ9sB_w");'></div>
+<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-slate-400 border-2 border-sidebar-dark"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-dark-primary text-sm font-medium leading-normal">Alex Thompson</p>
+<p class="text-text-dark-secondary text-sm font-normal leading-normal truncate max-w-[150px]">Sounds good, I'll review the new mockups.</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-text-dark-secondary text-xs font-medium">Yesterday</p>
+</div>
+</div>
+</div>
+<div class="group relative rounded-lg cursor-pointer">
+<div class="absolute inset-0 rounded-lg glow-border from-glow-start via-glow-mid to-glow-end"></div>
+<div class="relative flex gap-3 px-3 py-2.5 justify-between rounded-lg hover:bg-[#1f5dff1a] transition-colors duration-300">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Avatar for Maria Garcia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3NsQFKFpVqw9JmnTb6hRGK9LvDJSdWY9hUQnOpHam_CJv5OiULhtk2demNz7UojRwzheBzHnHqG1oIjqXi3ZfD0VgHOQjFUhfQ8L9fE9foWTvro_HcM1-u5uDSfCa5RFLV_e8r7ryjaMpzfZXNgBgbOALydTLoHe_pSX7tc8DE7wzfr-REzF-WdhL11C_xTkJVqmH53WoQlksjOFDVoICRK73uqUPoaP-JLdaKm6O6pyxes5VpzFlX2LQezGjDoUPNmdnlxhn1eeS");'></div>
+<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-sidebar-dark"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-dark-primary text-sm font-medium leading-normal">Maria Garcia</p>
+<p class="text-text-dark-secondary text-sm font-normal leading-normal truncate max-w-[150px]">Let's sync up tomorrow morning.</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-text-dark-secondary text-xs font-medium">1:30 PM</p>
+</div>
+</div>
+</div>
+<div class="group relative rounded-lg cursor-pointer">
+<div class="absolute inset-0 rounded-lg glow-border from-glow-start via-glow-mid to-glow-end"></div>
+<div class="relative flex gap-3 px-3 py-2.5 justify-between rounded-lg hover:bg-[#1f5dff1a] transition-colors duration-300">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Avatar for James Lee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDN8R2-9Acm0rdH4KY09-e51DdFpOua6zXvCC-DQcLbITZllBOVn47UesG02Jrz8c-lxXpfLDa2CvLwI1NDjvHfkXJUBfKXlBs4FUd-LAf2KT_LUr2tIKrsNYoH9R9r8Vrz9aGcrlG_PpMfq6_cp7KMzk1UDEKnQtPlS-I4Iux-q6zCzTYuS2H9Yc_5wGeHP6mEBQ4NkpPZeG0p6Ts-eksWxCwRV4B2nHoJL-3HBaQS46ahWFKLYnuJoNATuri0DsXVPT9thAT7kFo-");'></div>
+<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-slate-400 border-2 border-sidebar-dark"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-dark-primary text-sm font-medium leading-normal">James Lee</p>
+<p class="text-text-dark-secondary text-sm font-normal leading-normal truncate max-w-[150px]">Okay, I've pushed the latest changes.</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-text-dark-secondary text-xs font-medium">Mon</p>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</aside>
+<main class="flex-1 bg-gradient-to-br from-amoled-black via-amoled-black to-[#131a33] bg-[length:200%_200%] animate-gradient">
+<div class="flex h-full items-center justify-center p-8">
+<div class="text-center">
+<div class="mx-auto size-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl text-glow">forum</span>
+</div>
+<h2 class="text-xl font-semibold text-text-dark-primary">Welcome to Aeterna</h2>
+<p class="text-text-dark-secondary mt-2">Select a conversation to start chatting.</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

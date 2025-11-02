@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aeterna - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glowing-border {
+                position: relative;
+                overflow: hidden;
+            }
+            .glowing-border::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: inherit;
+                border: 1px solid transparent;
+                background: linear-gradient(100deg, #1e90ff, #1c72ff, #2962ff) border-box;
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) padding-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: 1;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            .glowing-border:hover::before,
+            .glowing-border.active::before,
+            .group:hover .glowing-border::before,
+            .glowing-border:focus-within::before {
+                opacity: 1;
+            }
+            .glowing-border::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 200%;
+                height: 200%;
+                background: conic-gradient(
+                    from 180deg at 50% 50%,
+                    rgba(41, 98, 255, 0.25) 0%,
+                    rgba(30, 144, 255, 0.25) 50%,
+                    rgba(28, 114, 255, 0.3) 100%
+                );
+                transform-origin: center;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: inherit;
+            }
+            .glowing-border:hover::after,
+            .glowing-border.active::after,
+            .group:hover .glowing-border::after,
+            .glowing-border:focus-within::after {
+                opacity: 0.15;
+            }
+            @keyframes background-pan {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            .animated-gradient {
+                background: linear-gradient(90deg, #000000, #0a0a22, #000000);
+                background-size: 200% 200%;
+                animation: background-pan 15s ease infinite;
+            }
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c72ff",
+                        "background-dark": "#000000",
+                        "card-dark": "#0c0c14",
+                        "border-dark": "#1a1a2e",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'background-pan': 'background-pan 15s ease infinite',
+                    },
+                    keyframes: {
+                        'background-pan': {
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display text-gray-200 animated-gradient">
+<div class="flex h-screen w-full">
+<aside class="flex w-64 flex-col border-r border-border-dark bg-card-dark/30 p-4 backdrop-blur-sm">
+<div class="flex items-center gap-3 p-2">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar for Eleanor Vance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBreULZVIBzW4P49n-nwMdt75t1FpiHVjJJMokiUSSr_m30IgNO811rQKNECtgUw0iF9A4oxgaYRDfdd71aADqBDSNf75HvHO7x99d_9D9ZZEzN1yHMrymnGLKISMCuYKRuYiCXVgQJGnkqOSUnZoKJr9W3V-ceIFvl3SyxVbVVHtknM59OpMblc5hCrKhe6hciG_QiXxfaKFBFQFzirVpzN_My4qJLYOZvhrrtdVclgqXslxP2lZSTLXvxYe0KM8my8B9yOqFdqpSs");'></div>
+<div class="absolute -bottom-1 -right-1 flex size-4 items-center justify-center rounded-full border-2 border-background-dark bg-green-500"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-gray-100 text-base font-medium leading-normal">Eleanor Vance</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">Online</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-8">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/20 glowing-border active" href="#">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+<p class="text-primary text-sm font-medium leading-normal">My Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-gray-300 text-xl">palette</span>
+<p class="text-gray-200 text-sm font-medium leading-normal">Appearance</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-gray-300 text-xl">notifications</span>
+<p class="text-gray-200 text-sm font-medium leading-normal">Notifications</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-gray-300 text-xl">lock</span>
+<p class="text-gray-200 text-sm font-medium leading-normal">Privacy &amp; Security</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-gray-300 text-xl">settings</span>
+<p class="text-gray-200 text-sm font-medium leading-normal">Account</p>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-gray-300 text-xl">logout</span>
+<p class="text-gray-200 text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto p-8">
+<div class="mx-auto max-w-4xl">
+<div class="flex flex-col gap-2 mb-8">
+<p class="text-gray-50 text-4xl font-black leading-tight tracking-[-0.033em]">My Profile</p>
+<p class="text-gray-400 text-base font-normal leading-normal">Manage your profile information and preferences.</p>
+</div>
+<div class="rounded-xl border border-border-dark bg-card-dark glowing-border">
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-50">Profile Information</h3>
+<p class="text-sm text-gray-400 mt-1">Update your personal details here.</p>
+</div>
+<div class="p-6 border-t border-border-dark">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24" data-alt="User avatar for Eleanor Vance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBreULZVIBzW4P49n-nwMdt75t1FpiHVjJJMokiUSSr_m30IgNO811rQKNECtgUw0iF9A4oxgaYRDfdd71aADqBDSNf75HvHO7x99d_9D9ZZEzN1yHMrymnGLKISMCuYKRuYiCXVgQJGnkqOSUnZoKJr9W3V-ceIFvl3SyxVbVVHtknM59OpMblc5hCrKhe6hciG_QiXxfaKFBFQFzirVpzN_My4qJLYOZvhrrtdVclgqXslxP2lZSTLXvxYe0KM8my8B9yOqFdqpSs");'></div>
+<button class="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] glowing-border active">
+<span class="truncate">Upload New Photo</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-border-dark text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] glowing-border">
+<span class="truncate">Remove</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+<div>
+<label class="text-sm font-medium text-gray-300" for="username">Username</label>
+<div class="relative mt-2 glowing-border rounded-lg">
+<input class="w-full bg-card-dark border border-border-dark rounded-lg px-4 py-2.5 text-gray-200 focus:ring-0 focus:border-transparent" id="username" type="text" value="eleanor.vance"/>
+</div>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-300" for="email">Email Address</label>
+<div class="relative mt-2 glowing-border rounded-lg">
+<input class="w-full bg-card-dark border border-border-dark rounded-lg px-4 py-2.5 text-gray-200 focus:ring-0 focus:border-transparent" id="email" type="email" value="eleanor.vance@aeterna.com"/>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mt-6" for="bio">Bio</label>
+<div class="relative mt-2 glowing-border rounded-lg">
+<textarea class="w-full bg-card-dark border border-border-dark rounded-lg px-4 py-2.5 text-gray-200 focus:ring-0 focus:border-transparent min-h-24" id="bio" placeholder="Tell us a little about yourself...">Lead Designer at Aeterna. Passionate about creating beautiful and intuitive user experiences.</textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl border border-border-dark bg-card-dark mt-8 glowing-border">
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-50">Status Settings</h3>
+<p class="text-sm text-gray-400 mt-1">Control your online presence.</p>
+</div>
+<div class="p-6 border-t border-border-dark space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-medium text-gray-100">Show online status</p>
+<p class="text-sm text-gray-400">Let others know when you are online.</p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-card-dark group" role="switch" type="button">
+<div class="absolute inset-[-3px] rounded-full glowing-border"></div>
+<span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-medium text-gray-100">Share my activity</p>
+<p class="text-sm text-gray-400">Show what you're currently doing (e.g., in a voice channel).</p>
+</div>
+<button aria-checked="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-border-dark transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-card-dark group" role="switch" type="button">
+<div class="absolute inset-[-3px] rounded-full glowing-border"></div>
+<span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-end items-center gap-4 mt-8">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-border-dark text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] glowing-border">
+<span class="truncate">Cancel</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] glowing-border active">
+<span class="truncate">Save Changes</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

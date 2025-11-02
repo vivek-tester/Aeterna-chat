@@ -24,7 +24,7 @@ function MainChatActiveChat() {
         </div>
         <div className="flex-1 overflow-y-auto">
           <nav className="flex flex-col gap-1 p-2">
-            <a className="flex items-start gap-3 rounded-lg bg-primary/20 p-3 glow-border" href="#">
+            <a className="flex items-start gap-3 rounded-lg bg-primary/20 p-3 glow-border" href="/chat/jared-dunn">
               <div className="relative shrink-0">
                 <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Jared Dunn's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfBBCI9hZYrI2zd6Dv1a-LOt6QwEBWTd5Dn7z5woEFN8c4nfVxIsGGtaD5Hf-ZmMqONS2EuVPq7bsMlgzyE-1b816hroPGDj54jQXyAMkTLcHJmtA6bV6QP3fb8ubO-Z_tZx9nKc7YUP4wYDI8xnfV9pNFFnStfgvK5eXbUV_QVxHCAU2DqNO0G002XYJCVRP9SpQbNYmiRMVpOtYnvuQ0D3OanjXtafTM6_XC64JLyKPAJYXioGd-k9BAu4qaK0wUgerRJBagYbDJ")' }}></div>
                 <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background-dark"></div>
@@ -37,9 +37,7 @@ function MainChatActiveChat() {
                 <p className="text-sm text-gray-300 truncate mt-1">Perfect! I'll send over the latest version...</p>
               </div>
             </a>
-            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="#">
-              <div className="relative shrink-0">
-                <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Richard Hendricks's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2rTBJSdYS6psNJ9RR5iI1qHOdpeZHxWZ3paMqg9CJy6DFBHem3b3J0UaADV0M11CA00klEg_b9WWN-_WeLVgZ48nL7GQZ-q9ImytgU74alr_CNIYyteG3RArUQ55Qnwocvt74Nu0D3-c0HT-9vB5zNyli-cEjO7v34nD6ldMM1LQP_A1Jgec0eVg-fGjHcHes5V2SRtQWkdjc4eexNLKiVRRkVHgXe7KkhFORmobZfJvzIR-R0QCCuVlPrCInL205HJrXbvwO8E9j")' }}></div>
+<a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/richard-hendricks"> style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2rTBJSdYS6psNJ9RR5iI1qHOdpeZHxWZ3paMqg9CJy6DFBHem3b3J0UaADV0M11CA00klEg_b9WWN-_WeLVgZ48nL7GQZ-q9ImytgU74alr_CNIYyteG3RArUQ55Qnwocvt74Nu0D3-c0HT-9vB5zNyli-cEjO7v34nD6ldMM1LQP_A1Jgec0eVg-fGjHcHes5V2SRtQWkdjc4eexNLKiVRRkVHgXe7KkhFORmobZfJvzIR-R0QCCuVlPrCInL205HJrXbvwO8E9j")' }}></div>
                 <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background-dark"></div>
               </div>
               <div className="flex-1 overflow-hidden">
@@ -50,9 +48,7 @@ function MainChatActiveChat() {
                 <p className="text-sm text-gray-400 truncate mt-1">We need to discuss the compression algorithm.</p>
               </div>
             </a>
-            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="#">
-              <div className="relative shrink-0">
-                <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Dinesh Chugtai's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH1IPlR0LANublxtQ82ufhZ8H1k7Xh8_HodEK3z1BWFsPiQwUkS2fD27-RIcasYfgL0ewuZ5YFh6QvYgDVsksdBZPjWAZn3XMlpK7EFNtntxQOt9qGQRgSuh8dwd2yJNyF4gKa9W3vJGaZoHsVa273sXd0CXmTVm6-YOJFtab6pGvuF0E9VXd8jeN1d1Sw9HMTogSm0Q7UhEcj6TGdesNwIRcEG8Lv4q4bv-TGNa68_CWUpcN-f2OhExogTOnY8UDweGILXO6_FzXz")' }}></div>
+<a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/dinesh-chugtai"> style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH1IPlR0LANublxtQ82ufhZ8H1k7Xh8_HodEK3z1BWFsPiQwUkS2fD27-RIcasYfgL0ewuZ5YFh6QvYgDVsksdBZPjWAZn3XMlpK7EFNtntxQOt9qGQRgSuh8dwd2yJNyF4gKa9W3vJGaZoHsVa273sXd0CXmTVm6-YOJFtab6pGvuF0E9VXd8jeN1d1Sw9HMTogSm0Q7UhEcj6TGdesNwIRcEG8Lv4q4bv-TGNa68_CWUpcN-f2OhExogTOnY8UDweGILXO6_FzXz")' }}></div>
               </div>
               <div className="flex-1 overflow-hidden">
                 <div className="flex justify-between items-baseline">
@@ -65,7 +61,7 @@ function MainChatActiveChat() {
                 </div>
               </div>
             </a>
-            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="#">
+            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/bertram-gilfoyle">
               <div className="relative shrink-0">
                 <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Bertram Gilfoyle's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZIFxoT1oOa8ZraHWtbW3rMfO2glQ7FB8kHcEX9DN4_QoVfsxNcE2NKpDxR098vGcz1GCG3RLwtCR4NkDqFiGd-7yhjOWsTposk6rqrgGEL4jxk1RtBGYHJgpx_dhGXmMWTEM7YlJuu6GO-zqEdHXWxRZz4LszxxnONvtgPCtfYN03HuO06p7uo5hpKeGm5uImSFqx0lWLD8d9pYew6HjwXw24uL6CBrYPZG6jGyy6P93RfjCpApwTVau7q2slg_BIGfU_YucAsWxh")' }}></div>
               </div>
@@ -80,7 +76,7 @@ function MainChatActiveChat() {
           </nav>
         </div>
         <div className="p-4 border-t border-gray-900">
-          <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary-accent/50 glow-border" href="#">
+          <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary-accent/50 glow-border" href="/settings">
             <span className="material-symbols-outlined text-gray-400">settings</span>
             <p className="text-sm font-medium text-gray-200">Settings</p>
           </a>

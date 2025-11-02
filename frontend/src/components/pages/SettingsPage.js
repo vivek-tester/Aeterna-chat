@@ -15,29 +15,25 @@ function SettingsPage() {
           </div>
         </div>
         <nav className="flex flex-col gap-2 mt-8">
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/20 glowing-border active" href="#">
+          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/20 glowing-border active" href="/settings/profile">
             <span className="material-symbols-outlined text-primary text-xl">person</span>
             <p className="text-primary text-sm font-medium leading-normal">My Profile</p>
           </a>
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="/settings/appearance">
             <span className="material-symbols-outlined text-gray-300 text-xl">palette</span>
             <p className="text-gray-200 text-sm font-medium leading-normal">Appearance</p>
           </a>
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
-            <span className="material-symbols-outlined text-gray-300 text-xl">notifications</span>
-            <p className="text-gray-200 text-sm font-medium leading-normal">Notifications</p>
+          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="/settings/notifications">
           </a>
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
-            <span className="material-symbols-outlined text-gray-300 text-xl">lock</span>
-            <p className="text-gray-200 text-sm font-medium leading-normal">Privacy &amp; Security</p>
+<a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="/settings/privacy">
           </a>
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="/settings/account">
             <span className="material-symbols-outlined text-gray-300 text-xl">settings</span>
             <p className="text-gray-200 text-sm font-medium leading-normal">Account</p>
           </a>
         </nav>
         <div className="mt-auto">
-          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="#">
+          <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5" href="/logout">
             <span className="material-symbols-outlined text-gray-300 text-xl">logout</span>
             <p className="text-gray-200 text-sm font-normal leading-normal">Logout</p>
           </a>

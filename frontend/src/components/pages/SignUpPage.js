@@ -49,7 +49,7 @@ function SignUpPage() {
           <div className="mt-6 text-center">
             <p className="text-sm text-text-secondary-dark">
               Already have an account?
-              <a className="font-semibold text-primary transition-all hover:text-blue-400 hover:underline" href="#">Log in</a>
+              <a className="font-semibold text-primary transition-all hover:text-blue-400 hover:underline" href="/login">Log in</a>
             </p>
           </div>
         </div>

@@ -32,7 +32,7 @@ function LoginPage() {
                   <span className="material-symbols-outlined text-xl">visibility</span>
                 </button>
               </div>
-              <a className="text-primary text-sm font-medium leading-normal block text-right hover:underline" href="#">Forgot Password?</a>
+              <a className="text-primary text-sm font-medium leading-normal block text-right hover:underline" href="/a">Forgot Password?</a>
             </div>
             <div className="w-full max-w-sm px-4 pt-2">
               <div className="group/button">
@@ -41,7 +41,7 @@ function LoginPage() {
                 </div>
               </div>
             </div>
-            <p className="text-muted-foreground text-sm font-normal leading-normal pt-4">Don't have an account? <a className="font-semibold text-primary hover:underline" href="#">Sign Up</a></p>
+            <p className="text-muted-foreground text-sm font-normal leading-normal pt-4">Don't have an account? <a className="font-semibold text-primary hover:underline" href="/signup">Sign Up</a></p>
           </div>
           <div className="cool-card hidden flex-1 items-center justify-center lg:flex">
             <div className="relative w-full max-w-md aspect-square rounded-xl overflow-hidden group/card glow-border">

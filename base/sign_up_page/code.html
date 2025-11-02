@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Account - Aeterna</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0D6BFF", // Deep electric blue
+                        "background-dark": "#000000", // AMOLED Black
+                        "card-dark": "#101010", // Slightly lighter for card
+                        "border-dark": "#1F1F1F", // Dark border
+                        "text-primary-dark": "#E6EDF3",
+                        "text-secondary-dark": "#8B949E",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px 0 rgba(13, 107, 255, 0.3)',
+                    },
+                    animation: {
+                        "border-glow": "border-glow 4s linear infinite",
+                        "background-pan": "background-pan 15s ease infinite",
+                    },
+                    keyframes: {
+                        "border-glow": {
+                            "0%": { "background-position": "0% 50%" },
+                            "50%": { "background-position": "100% 50%" },
+                            "100%": { "background-position": "0% 50%" },
+                        },
+                        "background-pan": {
+                             "0%": { "background-position": "0% 50%" },
+                             "50%": { "background-position": "100% 50%" },
+                             "100%": { "background-position": "0% 50%" },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        }
+        .animated-gradient-bg {
+            background: linear-gradient(300deg, #000000, #00091a, #000000, #09001a);
+            background-size: 400% 400%;
+            animation: background-pan 15s ease infinite;
+        }
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: linear-gradient(90deg, transparent, var(--tw-color-primary), transparent);
+            background-size: 200% 200%;
+            border-radius: inherit;z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: border-glow 4s linear infinite;
+        }
+        .glow-border:focus-within::before {
+            opacity: 1;
+        }
+        .glow-border input {
+            position: relative;
+            z-index: 1;
+        }
+        .glow-button {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 20px 0 rgba(13, 107, 255, 0.5);
+            background-color: #1A79FF;}
+        .glow-button::before {
+            content: "";
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 300%; height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease;
+            opacity: 0;
+            z-index: -1;
+        }
+        .glow-button:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-display text-text-primary-dark bg-background-dark animated-gradient-bg">
+<div class="flex min-h-screen w-full flex-col items-center justify-center p-4">
+<div class="w-full max-w-md space-y-8">
+<div class="text-center">
+<h1 class="text-5xl font-extrabold" style="text-shadow: 0 0 15px rgba(13, 107, 255, 0.5);">Aeterna</h1>
+</div>
+<div class="bg-card-dark/80 backdrop-blur-xl p-8 rounded-xl border border-border-dark shadow-2xl shadow-primary/10">
+<div class="mb-6 text-center">
+<h2 class="text-2xl font-bold text-text-primary-dark">Create an Account</h2>
+<p class="text-sm text-text-secondary-dark">Welcome to the future of communication.</p>
+</div>
+<form class="space-y-5">
+<div class="flex flex-col space-y-2">
+<label class="text-sm font-medium text-text-secondary-dark" for="name">Name</label>
+<div class="glow-border rounded-lg">
+<input class="w-full rounded-lg border border-border-dark bg-[#080808] h-11 px-4 text-sm placeholder:text-text-secondary-dark/70 focus:outline-none focus:ring-0" id="name" placeholder="Your full name" type="text"/>
+</div>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-sm font-medium text-text-secondary-dark" for="email">Email</label>
+<div class="glow-border rounded-lg">
+<input class="w-full rounded-lg border border-border-dark bg-[#080808] h-11 px-4 text-sm placeholder:text-text-secondary-dark/70 focus:outline-none focus:ring-0" id="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-sm font-medium text-text-secondary-dark" for="password">Password</label>
+<div class="glow-border relative flex w-full items-center rounded-lg">
+<input class="w-full rounded-lg border border-border-dark bg-[#080808] h-11 px-4 pr-10 text-sm placeholder:text-text-secondary-dark/70 focus:outline-none focus:ring-0" id="password" placeholder="Create a strong password" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-text-secondary-dark transition-colors hover:text-primary" type="button">
+<span class="material-symbols-outlined text-xl">visibility_off</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-sm font-medium text-text-secondary-dark" for="confirm-password">Confirm Password</label>
+<div class="glow-border rounded-lg">
+<input class="w-full rounded-lg border border-border-dark bg-[#080808] h-11 px-4 text-sm placeholder:text-text-secondary-dark/70 focus:outline-none focus:ring-0" id="confirm-password" placeholder="Re-enter your password" type="password"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="glow-button flex w-full items-center justify-center rounded-lg bg-primary h-11 px-6 text-sm font-bold text-white shadow-glow focus:outline-none" type="submit">
+                        Create Account
+                    </button>
+</div>
+</form>
+<div class="mt-6 text-center">
+<p class="text-sm text-text-secondary-dark">
+                    Already have an account?
+                    <a class="font-semibold text-primary transition-all hover:text-blue-400 hover:underline" href="#">Log in</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
