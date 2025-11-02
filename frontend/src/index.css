@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.glow-border {
+    position: relative;
+}
+.glow-border::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background-image: linear-gradient(90deg, hsl(215, 100%, 40%), hsl(215, 90%, 60%));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    filter: blur(5px);
+    animation: gradient-pan 8s linear infinite;
+    background-size: 200% 200%;
+}
+.glow-border:focus-within::before, .group\/button:hover .glow-border::before {
+    opacity: 0.75;
+}
+.input-container {
+    position: relative;
+}
+.input-field:focus + .floating-label,
+.input-field:not(:placeholder-shown) + .floating-label {
+    transform: translateY(-1.625rem) scale(0.8);
+    color: hsl(215, 90%, 60%);
+}
+.floating-label {
+    position: absolute;
+    top: 0.75rem;left: 0.75rem;color: hsl(215, 20%, 65%);pointer-events: none;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+    transform-origin: left top;
+    background-color: hsl(215, 10%, 15%);padding: 0 0.25rem;
+}
+.cool-card:hover .encrypted-text {
+    color: hsl(210, 40%, 98%);
+    text-shadow: 0 0 5px hsl(215, 90%, 60%);
+}
+.cool-card .encrypted-text {
+    transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+}
