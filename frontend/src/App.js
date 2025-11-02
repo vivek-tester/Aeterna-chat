@@ -1,13 +1,10 @@
 import React from 'react';
+import LoginPage from './components/pages/LoginPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World!
-        </p>
-      </header>
+      <LoginPage />
     </div>
   );
 }
