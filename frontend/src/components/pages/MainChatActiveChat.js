@@ -37,7 +37,9 @@ function MainChatActiveChat() {
                 <p className="text-sm text-gray-300 truncate mt-1">Perfect! I'll send over the latest version...</p>
               </div>
             </a>
-<a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/richard-hendricks"> style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2rTBJSdYS6psNJ9RR5iI1qHOdpeZHxWZ3paMqg9CJy6DFBHem3b3J0UaADV0M11CA00klEg_b9WWN-_WeLVgZ48nL7GQZ-q9ImytgU74alr_CNIYyteG3RArUQ55Qnwocvt74Nu0D3-c0HT-9vB5zNyli-cEjO7v34nD6ldMM1LQP_A1Jgec0eVg-fGjHcHes5V2SRtQWkdjc4eexNLKiVRRkVHgXe7KkhFORmobZfJvzIR-R0QCCuVlPrCInL205HJrXbvwO8E9j")' }}></div>
+            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/richard-hendricks">
+              <div className="relative shrink-0">
+                <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Richard Hendricks's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2rTBJSdYS6psNJ9RR5iI1qHOdpeZHxWZ3paMqg9CJy6DFBHem3b3J0UaADV0M11CA00klEg_b9WWN-_WeLVgZ48nL7GQZ-q9ImytgU74alr_CNIYyteG3RArUQ55Qnwocvt74Nu0D3-c0HT-9vB5zNyli-cEjO7v34nD6ldMM1LQP_A1Jgec0eVg-fGjHcHes5V2SRtQWkdjc4eexNLKiVRRkVHgXe7KkhFORmobZfJvzIR-R0QCCuVlPrCInL205HJrXbvwO8E9j")' }}></div>
                 <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background-dark"></div>
               </div>
               <div className="flex-1 overflow-hidden">
@@ -48,7 +50,9 @@ function MainChatActiveChat() {
                 <p className="text-sm text-gray-400 truncate mt-1">We need to discuss the compression algorithm.</p>
               </div>
             </a>
-<a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/dinesh-chugtai"> style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH1IPlR0LANublxtQ82ufhZ8H1k7Xh8_HodEK3z1BWFsPiQwUkS2fD27-RIcasYfgL0ewuZ5YFh6QvYgDVsksdBZPjWAZn3XMlpK7EFNtntxQOt9qGQRgSuh8dwd2yJNyF4gKa9W3vJGaZoHsVa273sXd0CXmTVm6-YOJFtab6pGvuF0E9VXd8jeN1d1Sw9HMTogSm0Q7UhEcj6TGdesNwIRcEG8Lv4q4bv-TGNa68_CWUpcN-f2OhExogTOnY8UDweGILXO6_FzXz")' }}></div>
+            <a className="flex items-start gap-3 rounded-lg hover:bg-primary-accent/50 p-3 glow-border" href="/chat/dinesh-chugtai">
+              <div className="relative shrink-0">
+                <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Dinesh Chugtai's avatar" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH1IPlR0LANublxtQ82ufhZ8H1k7Xh8_HodEK3z1BWFsPiQwUkS2fD27-RIcasYfgL0ewuZ5YFh6QvYgDVsksdBZPjWAZn3XMlpK7EFNtntxQOt9qGQRgSuh8dwd2yJNyF4gKa9W3vJGaZoHsVa273sXd0CXmTVm6-YOJFtab6pGvuF0E9VXd8jeN1d1Sw9HMTogSm0Q7UhEcj6TGdesNwIRcEG8Lv4q4bv-TGNa68_CWUpcN-f2OhExogTOnY8UDweGILXO6_FzXz")' }}></div>
               </div>
               <div className="flex-1 overflow-hidden">
                 <div className="flex justify-between items-baseline">
