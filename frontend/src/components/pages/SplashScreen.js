@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SplashScreen() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/login');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
   return (
     <div className="flex flex-col min-h-screen font-display bg-[linear-gradient(135deg,_#000000,_#001f66,_#000000)] bg-[length:200%_200%] animate-gradient-animation text-neutral-100">
       <main className="flex flex-1 flex-col items-center justify-center p-4">
